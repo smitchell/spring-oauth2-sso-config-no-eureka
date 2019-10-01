@@ -1,17 +1,17 @@
-#Spring Cloud SSO Zuul Proxy w/o Config or Discovery
+#Spring OAuth2 with SSO and Cloud Config, but no Eureka
 
 ## How to run this project locally
 
 ### Start the Authentication Server
-1) cd ./spring-security-zuul-sso/authentication-service
+1) cd ./spring-oauth2-sso-config-no-eureka/authentication-service
 2) mvn spring-boot:run
 
 ### Start the Protected Web site
-1) cd ./spring-security-zuul-sso/protected-web-site
+1) cd ./spring-oauth2-sso-config-no-eureka/protected-web-site
 2) ng serve --baseHref=/protected-web-site/ --port=9001
 
 ### Start the Zuul Proxy
-1) /spring-security-zuul-sso/proxy-service
+1) /spring-oauth2-sso-config-no-eureka/proxy-service
 2) mvn spring-boot:run
 
 
