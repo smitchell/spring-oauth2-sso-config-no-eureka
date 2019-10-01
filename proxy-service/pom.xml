@@ -9,7 +9,7 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.example</groupId>
-  <artifactId>proxy</artifactId>
+  <artifactId>proxy-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>proxy-service</name>
   <description>Spring Cloud SSO Zuul w/Config Service but no Eureka</description>

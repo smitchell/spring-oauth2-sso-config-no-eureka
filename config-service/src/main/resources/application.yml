@@ -1,3 +1,8 @@
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.cloud.config.server: DEBUG
+
 server:
   port: 8888
 
@@ -6,8 +11,12 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com/smitchell/spring-oauth2-sso-config-no-eureka.git
-          search-paths: configurations
-          clone-on-start: true
-          ignore-local-ssh-settings: true
-
+          uri: file://${user.home}/Development/smitchell/spring-oauth2-sso-config-no-eureka
+#          uri: git@github.com/smitchell/spring-oauth2-sso-no-config-no-eureka.git
+          search-paths: config-repo
+          # Normally, this is true, but in this example the git root is above config-repo
+          # which causes the repository to be cloned over all the projects. The config-repo
+          # should be a stand-along git repository.
+          clone-on-start: false
+  profiles:
+    active: native
