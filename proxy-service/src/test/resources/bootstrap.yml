@@ -1,0 +1,12 @@
+security:
+  basic:
+    enabled: false
+
+server:
+  port: 0
+
+spring:
+  cloud:
+    config:
+      enabled: false
+      override-none: true

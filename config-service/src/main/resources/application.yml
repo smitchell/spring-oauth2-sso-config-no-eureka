@@ -1,0 +1,13 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com/smitchell/spring-oauth2-sso-config-no-eureka.git
+          search-paths: configurations
+          clone-on-start: true
+          ignore-local-ssh-settings: true
+

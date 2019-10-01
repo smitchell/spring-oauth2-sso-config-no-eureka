@@ -1,0 +1,67 @@
+keyPair:
+  # I generated this just for this example project
+  # openssl genrsa -out jwt.pem 2048
+  # openssl rsa -in jwt.pem
+  value: abc
+  private-key: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEpQIBAAKCAQEAt43IFSkg+S24R0Uw9PGpioGOcmFQqiivkOAC9WSTJGUVF7Jo
+    y9lXzVQtflgJ+3fgNvF1+h+5utttKF70rxM9bCTUYbOh5PaMU/Qo/AtmA5MaYy1i
+    QPDsUM3v8dIqMhoqEmg1iXpHTQ6SA2vs4ZWcGmQFCExc+/IKZbSwa/nY+mGZapQY
+    K5UCh/mMAlOf2RvrWcRB4lePLYNeYBvHfcSwniqYIIJCptoCSn9nqowYJ1GGFRYQ
+    VO1oMFMMkCA0xIskO4nxSxZCpk+3ocmHV/hkbJfVeSw8pZ07rFXTAVYMyd2VYqdh
+    HL8svbT8yePYbfb4iZqoOC9r6Yd2pDLApbTiYQIDAQABAoIBABHLE7dBamndTbzS
+    70D/YDEGCBn8ZwZntUU1AfRp0H25ssa+S7xfEEzeOR7DSAxxfXG2DHq3sphzhuxf
+    8BY8pjqig1gJQstgPxAwXfy42iXEj81Ha/vhnvbiT71AY0jCEowAQBhYmyrUG8Fr
+    J+ZiS2Sfh4FbbbQarXlYf7Wn3am/vA19bKsOQF5FjEUFa7N+fQIV9P5IB3LzCgXn
+    /KxXGTcRmDu1521WdCivOkH5XNdsJtS9w4Bs8ft1vl4gS48dsN3P/QUjzGBftnjQ
+    p9iBP3Qhxw/2ZwSW+UrO+HteR1D/OomFdnaBt9Rjz23mbQY0FnIqMlcF/v6pojOh
+    ZY2mysECgYEA8OpwvYSwpCe7N4I7EI0jOHDFGmEYHCx2KB7/5SMbVxfebN5+/huU
+    ZX+nhclaIeeLqqtficqNAQ2hmyuNQpE2UJ8fySD3EnsDJDa3V6/c59TxNKjcW6gS
+    pg5Y+2/KehuJqJR5IXa+xtkBqvvVi0pTXMzP6t1W80TPLlKkYlYgszkCgYEAwwvn
+    ylU3KOHWqsqTRaOl1Ii7LAInUqW4rBTxthiV3UkYf1fY/eVB7O906vp523YC73wQ
+    YCvTB0FUPtOkphCgYdXXm3x+d5tbxgyIGw8ZmC4GpUG58ENLPndAsE6AoAxQ9j6l
+    hnMZuwjHos+2vcgAbIpvuyuGTqDoHoVkkvnGYGkCgYEA6g5qv8VFNAahvfkZVyg3
+    2qK867b/DIgptyr+4+fqrP+0icLUUB4NW1rdL36CwcPKDmL2q9EMksRiiHWUhOK9
+    iTA/WlFbmSnH0IwULe3eyaE5Qjb391hf3dK8onNmnKFaaVzuHhPWnyu/khWezvfD
+    67nUGlM2IZxtSIzjxeH1XQkCgYEAlStjyKDHoOKn1NM9MwNnblZsH8o93L2VsTYL
+    bmL7KtQegjXjZLqTYuv4FUYfMDLfJ91QgNzDdkcGcU5YHBGXN3vee7II3tzYoW0w
+    ItG3l2WL+5N66z/sKgf2V2CSitUgjlN3MI6S3TJnzCLj9d0iReDSdulgvH3fSIho
+    VOfmShECgYEAryTktcp6+eFVu6rTnBpwzCQD952JQA3l+4C6dR2bWbOujpr7ICiR
+    WevvGoJlN1Z6WU2jq9Gqh54cTI7RzEsYl/CZ2arwv0pFQFiCdsuyE6w9JaCAIhxF
+    3HiZkHwob7fGJEbRHWKeiCZtbqAeOMcqkjnBIt6YsRGF3ycRGXN6Gww=
+    -----END RSA PRIVATE KEY-----
+  # I generated this just for this example project
+  # openssl rsa -in jwt.pem -pubout
+  public-key: |
+    -----BEGIN PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt43IFSkg+S24R0Uw9PGp
+    ioGOcmFQqiivkOAC9WSTJGUVF7Joy9lXzVQtflgJ+3fgNvF1+h+5utttKF70rxM9
+    bCTUYbOh5PaMU/Qo/AtmA5MaYy1iQPDsUM3v8dIqMhoqEmg1iXpHTQ6SA2vs4ZWc
+    GmQFCExc+/IKZbSwa/nY+mGZapQYK5UCh/mMAlOf2RvrWcRB4lePLYNeYBvHfcSw
+    niqYIIJCptoCSn9nqowYJ1GGFRYQVO1oMFMMkCA0xIskO4nxSxZCpk+3ocmHV/hk
+    bJfVeSw8pZ07rFXTAVYMyd2VYqdhHL8svbT8yePYbfb4iZqoOC9r6Yd2pDLApbTi
+    YQIDAQAB
+    -----END PUBLIC KEY-----
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.security: DEBUG
+
+server:
+  port: 0
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
+  cloud:
+    discovery:
+      enabled: false
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+  profiles:
+    active: test

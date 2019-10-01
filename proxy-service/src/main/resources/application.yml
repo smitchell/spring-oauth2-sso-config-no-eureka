@@ -1,0 +1,6 @@
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.cloud.netflix.zuul: DEBUG
+    org.springframework.cloud.context.config: DEBUG

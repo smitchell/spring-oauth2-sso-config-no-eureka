@@ -1,0 +1,53 @@
+proxy:
+  permitAll:
+    matches: /login**/error**,/*.js,/favicon.ico,*.map,/*.css,/robots.txt
+
+zuul:
+  add-proxy-headers: true
+  sensitiveHeaders: Cookie,Set-Cookie
+  ignoredPatterns: /**/health/**,/**/mappings/**
+  ignored-services: "*"
+  routes:
+    protected-site:
+      path: /protected-web-site/**
+      url: http://localhost:9001/protected-web-site/
+    authorization-service:
+      path: /authorization-server/**
+      url: http://localhost:9002/authorization-service
+      sensitiveHeaders: Authorization
+      stripPrefix: false
+
+security:
+  oauth2:
+    client:
+      accessTokenUri: http://localhost:9002/oauth/token
+      userAuthorizationUri: http://localhost:9002/oauth/authorize
+      clientId: proxy-client
+      clientSecret: client-secret
+    resource:
+      jwt:
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt43IFSkg+S24R0Uw9PGp
+          ioGOcmFQqiivkOAC9WSTJGUVF7Joy9lXzVQtflgJ+3fgNvF1+h+5utttKF70rxM9
+          bCTUYbOh5PaMU/Qo/AtmA5MaYy1iQPDsUM3v8dIqMhoqEmg1iXpHTQ6SA2vs4ZWc
+          GmQFCExc+/IKZbSwa/nY+mGZapQYK5UCh/mMAlOf2RvrWcRB4lePLYNeYBvHfcSw
+          niqYIIJCptoCSn9nqowYJ1GGFRYQVO1oMFMMkCA0xIskO4nxSxZCpk+3ocmHV/hk
+          bJfVeSw8pZ07rFXTAVYMyd2VYqdhHL8svbT8yePYbfb4iZqoOC9r6Yd2pDLApbTi
+          YQIDAQAB
+          -----END PUBLIC KEY-----
+
+server:
+  port: 9000
+  servlet:
+    session:
+      cookie:
+        name: UISESSION
+  session:
+    timeout: 3600
+  use-forward-headers: true
+
+
+spring:
+  aop:
+    proxy-target-class: true
