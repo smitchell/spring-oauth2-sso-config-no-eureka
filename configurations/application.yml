@@ -5,7 +5,3 @@ management:
         include: "health,info"
   security:
     enabled: false
-
-info:
-  build:
-    version: @project.version@
