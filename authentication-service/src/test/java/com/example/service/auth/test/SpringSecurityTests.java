@@ -1,4 +1,4 @@
-package com.example.service.auth.config;
+package com.example.service.auth.test;
 
 import com.example.service.auth.domain.User;
 import com.example.service.auth.repository.UserRepository;

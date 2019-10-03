@@ -18,5 +18,3 @@ spring:
           # which causes the repository to be cloned over all the projects. The config-repo
           # should be a stand-along git repository.
           clone-on-start: false
-  profiles:
-    active: native
