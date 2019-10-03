@@ -11,10 +11,6 @@ spring:
     config:
       server:
         git:
-          uri: file://${user.home}/Development/smitchell/spring-oauth2-sso-config-no-eureka
-#          uri: git@github.com/smitchell/spring-oauth2-sso-no-config-no-eureka.git
+          uri: file://${pwd}/../
           search-paths: config-repo
-          # Normally, this is true, but in this example the git root is above config-repo
-          # which causes the repository to be cloned over all the projects. The config-repo
-          # should be a stand-along git repository.
           clone-on-start: false
