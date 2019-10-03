@@ -2,6 +2,25 @@
 
 ## How to run this project locally
 
+### FIX THE PATH TO YOUR PROJECT LOCATION
+That config-repo path is relative using the $PWD environment variable. If you are running
+this on Windows you'll need to fix this path for your operating system. The code
+snippet below is from the the config-service main application.yml.
+
+```
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://${pwd}/../
+          search-paths: config-repo
+          clone-on-start: false
+```
+
+Also, "clone-on-start: false" doesn't work the way I thought. Since all of the projects are under
+a single Git root, each time you start the configuration service it overwrites any local uncommitted changes.
+
 ### Start the Authentication Server
 1) cd ./spring-oauth2-sso-config-no-eureka/authentication-service
 2) mvn spring-boot:run
