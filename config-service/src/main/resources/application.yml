@@ -10,7 +10,8 @@ spring:
   cloud:
     config:
       server:
-        git:
-          uri: file://${pwd}/../
-          search-paths: config-repo
-          clone-on-start: false
+        native:
+          search-locations: file://${pwd}/../config-repo
+  profiles:
+    active: native
+

@@ -12,14 +12,9 @@ spring:
   cloud:
     config:
       server:
-        git:
-          uri: file://${pwd}/../
-          search-paths: config-repo
-          clone-on-start: false
+        native:
+          search-locations: file://${pwd}/../config-repo
 ```
-
-Also, "clone-on-start: false" doesn't work the way I thought. Since all of the projects are under
-a single Git root, each time you start the configuration service it overwrites any local uncommitted changes.
 
 ### Start the Authentication Server
 1) cd ./spring-oauth2-sso-config-no-eureka/authentication-service
@@ -27,7 +22,8 @@ a single Git root, each time you start the configuration service it overwrites a
 
 ### Start the Protected Web site
 1) cd ./spring-oauth2-sso-config-no-eureka/protected-web-site
-2) ng serve --baseHref=/protected-web-site/ --port=9001
+2) npm install
+3) ng serve --baseHref=/protected-web-site/ --port=9001
 
 ### Start the Zuul Proxy
 1) /spring-oauth2-sso-config-no-eureka/proxy-service
