@@ -16,6 +16,9 @@ spring:
           search-locations: file://${pwd}/../config-repo
 ```
 
+Also, the Config Service is running in native mode, which is only suitable for testing.
+Use a Git repository in non-Dev environments.
+
 ### Start the Authentication Server
 1) cd ./spring-oauth2-sso-config-no-eureka/authentication-service
 2) mvn spring-boot:run
